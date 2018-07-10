@@ -1,0 +1,34 @@
+###> symfony/framework-bundle ###
+.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+/bin/*
+!bin/.gitkeep
+!bin/console
+
+/build/*
+!build/.gitkeep
+
+!var/.gitkeep
+!var/*/.gitkeep
+
+# Managed by Composer
+/var/bootstrap.php.cache
+
+# Codecept
+/tests/_output/
+!tests/_output/.gitkeep
+
+# Wand
+.phplint-cache
+.wand-cache
+
+# PhpStorm
+.idea/
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###
