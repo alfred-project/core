@@ -1,10 +1,21 @@
 
                                                                                                                                             
     
-# Classes
+# Application
 
-* [Alfred\Core\Ui\Console\Application](Alfred/Core/Ui/Console/Application.md)
 
+> Define como se ejecuta la aplicación desde la linea de comandos
+>
+> 
+
+
+
+
+
+
+
+
+## Methods
 
                                                                                                                                                                                                                                                                                                                                                                                                             
     

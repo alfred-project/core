@@ -1,9 +1,16 @@
 
                                                                                                                                             
     
-# Classes
+# Alfred\Core
 
-* [Alfred\Core\Ui\Console\Application](Alfred/Core/Ui/Console/Application.md)
+## Namespaces
+- [Alfred\Core\Ui](../Alfred/Core/Ui.md)
+
+
+
+
+
+
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             

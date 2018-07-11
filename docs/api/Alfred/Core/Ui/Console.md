@@ -1,9 +1,18 @@
 
                                                                                                                                             
     
-# Classes
+# Alfred\Core\Ui\Console
 
-* [Alfred\Core\Ui\Console\Application](Alfred/Core/Ui/Console/Application.md)
+
+
+## Classes
+| | |
+| --- | --- |
+| [Alfred\Core\Ui\Console\Application](../../../Alfred/Core/Ui/Console/Application.md) |  |
+
+
+
+
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             

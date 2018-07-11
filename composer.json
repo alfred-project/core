@@ -14,5 +14,16 @@
         "optimize-autoloader": true,
         "sort-packages": true,
         "apcu-autoloader": true
-    }
+    },
+    "require": {
+        "symfony/console": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alfred\\Core\\": "src/Core/"
+        }
+    },
+    "bin": [
+        "bin/alfred"
+    ]
 }
