@@ -44,10 +44,10 @@ class ContainerBuilder extends BaseContainerBuilder
         $root = realpath(__DIR__.'/../../../../');
         $this->setParameter('root_dir', $root);
 
-
         $loader = new XmlFileLoader($this, new FileLocator($root.'/config'));
 
         $loader->load('twig.xml');
+        $loader->load('cli.xml');
 
         return $this;
     }

@@ -1,12 +1,12 @@
 
                                                                                                                                             
     
-# Application
+# RunCommand
 
 
-> Define como se ejecuta la aplicación desde la linea de comandos
+> Comand Run
 >
-> 
+> alfred-please run ...
 
 
 
@@ -17,17 +17,28 @@
 
 ## Methods
 
-### run
-Ejecuta la aplicación
+### __construct
+RunCommand constructor.
 
 
-**Application::run**([InputInterface](../../../../InputInterface.md) $input = null, [OutputInterface](../../../../OutputInterface.md) $output = null) : int|void
+**RunCommand::__construct**() : 
+
+
+
+---
+
+
+### execute
+
+
+
+protected **RunCommand::execute**([InputInterface](../../../../../InputInterface.md) $input, [OutputInterface](../../../../../OutputInterface.md) $output) : 
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[InputInterface](../../../../InputInterface.md) |$input |  |
-|[OutputInterface](../../../../OutputInterface.md) |$output |  |
+|[InputInterface](../../../../../InputInterface.md) |$input |  |
+|[OutputInterface](../../../../../OutputInterface.md) |$output |  |
 
 ---
 

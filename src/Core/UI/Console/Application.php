@@ -29,14 +29,44 @@ class Application extends ConsoleApplication
     private $container;
 
     /**
-     * {@inheritDoc}
+     * Ejecuta la aplicación
+     *
+     * @param null|\Symfony\Component\Console\Input\InputInterface   $input
+     * @param null|\Symfony\Component\Console\Output\OutputInterface $output
+     *
+     * @return int|void
+     *
+     * @throws \Exception
      */
-    public function doRun(InputInterface $input, OutputInterface $output)
+    public function run(?InputInterface $input = null, ?OutputInterface $output = null)
     {
         $this->container = ContainerBuilder::loadAll();
 
-        var_dump(get_class($this->container->get('twig')));
+        $commands = $this->getCommands();
+        $this->addCommands($commands);
 
-        return parent::doRun($input, $output);
+        parent::run($input, $output);
+    }
+
+    /**
+     * Devuelve un array con los commandos definidos en la aplicación
+     *
+     * alfred-please init
+     *
+     * alfred-please run profile <profile>
+     * alfred-please run job <job>
+     * alfred-please run task <job>:<task>
+     *
+     * alfred-please show config
+     *
+     * @return \Symfony\Component\Console\Command\Command[]
+     *
+     * @throws \Exception
+     */
+    private function getCommands(): array
+    {
+        return [
+            $this->container->get('run.command'),
+        ];
     }
 }

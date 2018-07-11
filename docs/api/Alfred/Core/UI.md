@@ -1,35 +1,16 @@
 
                                                                                                                                             
     
-# Application
+# Alfred\Core\UI
 
-
-> Define como se ejecuta la aplicación desde la linea de comandos
->
-> 
-
+## Namespaces
+- [Alfred\Core\UI\Console](../../Alfred/Core/UI/Console.md)
 
 
 
 
 
 
-
-## Methods
-
-### run
-Ejecuta la aplicación
-
-
-**Application::run**([InputInterface](../../../../InputInterface.md) $input = null, [OutputInterface](../../../../OutputInterface.md) $output = null) : int|void
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[InputInterface](../../../../InputInterface.md) |$input |  |
-|[OutputInterface](../../../../OutputInterface.md) |$output |  |
-
----
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             
