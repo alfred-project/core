@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# Application
+# ContainerBuilder
 
 
-> Define como se ejecuta la aplicación desde la linea de comandos
+> Contenedor de dependencias
 >
 > 
 
@@ -17,17 +17,24 @@
 
 ## Methods
 
-### doRun
-{@inheritDoc}
+### loadAll
+Crea una nueva instancia, debidamente configurada
 
 
-**Application::doRun**([InputInterface](../../../../InputInterface.md) $input, [OutputInterface](../../../../OutputInterface.md) $output) : 
+static **ContainerBuilder::loadAll**() : [ContainerBuilder](../../../../ContainerBuilder.md)
 
 
-|Parameters: | | |
-| --- | --- | --- |
-|[InputInterface](../../../../InputInterface.md) |$input |  |
-|[OutputInterface](../../../../OutputInterface.md) |$output |  |
+
+---
+
+
+### init
+Define parámetros y servicios
+
+
+protected **ContainerBuilder::init**() : [ContainerBuilder](../../../../ContainerBuilder.md)
+
+
 
 ---
 

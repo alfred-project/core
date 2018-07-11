@@ -1,35 +1,16 @@
 
                                                                                                                                             
     
-# Application
+# Alfred\Core\Infrastructure
 
-
-> Define como se ejecuta la aplicación desde la linea de comandos
->
-> 
-
+## Namespaces
+- [Alfred\Core\Infrastructure\DependencyInjection](../../Alfred/Core/Infrastructure/DependencyInjection.md)
 
 
 
 
 
 
-
-## Methods
-
-### doRun
-{@inheritDoc}
-
-
-**Application::doRun**([InputInterface](../../../../InputInterface.md) $input, [OutputInterface](../../../../OutputInterface.md) $output) : 
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[InputInterface](../../../../InputInterface.md) |$input |  |
-|[OutputInterface](../../../../OutputInterface.md) |$output |  |
-
----
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             

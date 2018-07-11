@@ -1,35 +1,18 @@
 
                                                                                                                                             
     
-# Application
-
-
-> Define como se ejecuta la aplicación desde la linea de comandos
->
-> 
+# Alfred\Core\Infrastructure\DependencyInjection
 
 
 
-
+## Classes
+| | |
+| --- | --- |
+| [Alfred\Core\Infrastructure\DependencyInjection\ContainerBuilder](../../../Alfred/Core/Infrastructure/DependencyInjection/ContainerBuilder.md) | Contenedor de dependencias |
 
 
 
 
-## Methods
-
-### doRun
-{@inheritDoc}
-
-
-**Application::doRun**([InputInterface](../../../../InputInterface.md) $input, [OutputInterface](../../../../OutputInterface.md) $output) : 
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[InputInterface](../../../../InputInterface.md) |$input |  |
-|[OutputInterface](../../../../OutputInterface.md) |$output |  |
-
----
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             
