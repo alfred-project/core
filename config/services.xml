@@ -5,12 +5,18 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="run.command.class">\Alfred\Core\UI\Console\Command\RunCommand</parameter>
+        <parameter key="config.factory.class">\Alfred\Core\Infrastructure\Configuration\ConfigFactory</parameter>
     </parameters>
 
     <services>
-        <service id="run.command" class="%run.command.class%">
-            <argument type="service" id="config"/>
+
+        <service id="config.factory" class="%config.factory.class%">
+
+        </service>
+
+        <service id="config" class="%config.class%">
+            <factory service="config.factory" method="create"/>
+            <argument type="string">%config-file%</argument>
         </service>
     </services>
 </container>

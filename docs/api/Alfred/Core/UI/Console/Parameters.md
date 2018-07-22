@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# ContainerBuilder
+# Parameters
 
 
-> Contenedor de dependencias
+> Diccionario de parámetros pasados por consola
 >
 > 
 
@@ -17,30 +17,30 @@
 
 ## Methods
 
-### create
-Crea una nueva instancia, debidamente configurada
+### resolveInput
+Obtiene una lista de parámetros a partir de los argumentos pasados por linea de comandos
 
 
-static **ContainerBuilder::create**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+**Parameters::resolveInput**([ArgvInput](../../../../ArgvInput.md) $input) : string[]
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
+|[ArgvInput](../../../../ArgvInput.md) |$input |  |
 
 ---
 
 
-### boot
-Define parámetros y servicios
+### configure
 
 
-protected **ContainerBuilder::boot**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+
+**Parameters::configure**([OptionsResolver](../../../../OptionsResolver.md) $resolver) : 
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
+|[OptionsResolver](../../../../OptionsResolver.md) |$resolver |  |
 
 ---
 

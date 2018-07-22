@@ -1,0 +1,26 @@
+suites:
+    default:
+        namespace: Alfred\
+        psr4_prefix: Alfred\
+
+
+formatter.name: pretty
+
+extensions:
+    Memio\SpecGen\MemioSpecGenExtension: ~
+    Cjm\PhpSpec\Extension\TypeHintedMethodsExtension: ~
+    LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
+      format:
+        - text
+        - html
+        - clover
+      output:
+        html: build/coverage
+        clover: build/coverage.xml
+      whitelist:
+        - src
+      blacklist:
+        - src/Core/UI/Console/Application.php
+        - src/Core/UI/Console/Command/RunCommand.php
+        #- src/Core/Infrastructure
+

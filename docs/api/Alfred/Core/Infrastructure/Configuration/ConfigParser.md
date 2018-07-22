@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# ContainerBuilder
+# ConfigParser
 
 
-> Contenedor de dependencias
+> Factory para leer y parsear objetos Config
 >
 > 
 
@@ -17,30 +17,38 @@
 
 ## Methods
 
-### create
-Crea una nueva instancia, debidamente configurada
+### __construct
+ConfigParser constructor.
 
 
-static **ContainerBuilder::create**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+**ConfigParser::__construct**(string $configDir) : 
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
+|string |$configDir | La ruta donde se guardan los ficheros de configuracion |
 
 ---
 
 
-### boot
-Define parámetros y servicios
+### build
+Construye un objet Config
 
 
-protected **ContainerBuilder::boot**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+**ConfigParser::build**() : [Config](../../../../Config.md)
 
 
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
+
+---
+
+
+### parseContent
+
+
+
+protected **ConfigParser::parseContent**() : mixed[]
+
+
 
 ---
 

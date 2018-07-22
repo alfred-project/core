@@ -1,48 +1,16 @@
 
                                                                                                                                             
     
-# ContainerBuilder
+# Alfred\Core\Domain
 
-
-> Contenedor de dependencias
->
-> 
-
+## Namespaces
+- [Alfred\Core\Domain\Configuration](../../Alfred/Core/Domain/Configuration.md)
 
 
 
 
 
 
-
-## Methods
-
-### create
-Crea una nueva instancia, debidamente configurada
-
-
-static **ContainerBuilder::create**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
-
----
-
-
-### boot
-Define parámetros y servicios
-
-
-protected **ContainerBuilder::boot**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
-
----
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             

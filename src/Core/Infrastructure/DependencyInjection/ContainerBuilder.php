@@ -26,29 +26,65 @@ class ContainerBuilder extends BaseContainerBuilder
     /**
      * Crea una nueva instancia, debidamente configurada
      *
+     * @param \Alfred\Core\Infrastructure\DependencyInjection\Parameters $parameters
+     *
      * @return \Alfred\Core\Infrastructure\DependencyInjection\ContainerBuilder
      */
-    public static function loadAll(): self
+    public static function create(Parameters $parameters): self
     {
-
-        return (new self())->init();
+        return (new self())->boot($parameters);
     }
 
     /**
      * Define parámetros y servicios
      *
+     * @param \Alfred\Core\Infrastructure\DependencyInjection\Parameters $parameters
+     *
      * @return \Alfred\Core\Infrastructure\DependencyInjection\ContainerBuilder
      */
-    protected function init(): self
+    protected function boot(Parameters $parameters): self
     {
-        $root = realpath(__DIR__.'/../../../../');
-        $this->setParameter('root_dir', $root);
 
-        $loader = new XmlFileLoader($this, new FileLocator($root.'/config'));
-
-        $loader->load('twig.xml');
-        $loader->load('cli.xml');
+        $this->initParameters($parameters);
+        $this->loadServices();
 
         return $this;
+    }
+
+    /**
+     * Asigna los parámetros
+     *
+     * @param string[] $parameters
+     */
+    private function initParameters(Parameters $parameters): void
+    {
+        foreach ($parameters as $name => $value) {
+            $this->setParameter($name, $value);
+        }
+    }
+
+    /**
+     * Asigna los servicios definidos en los archivos de configuración
+     */
+    private function loadServices(): void
+    {
+        $loader = $this->getLoader();
+
+        $loader->load('twig.xml');
+        $loader->load('services.xml');
+        $loader->load('cli.xml');
+    }
+
+    /**
+     * Crea el objeto Loader, para leer los ficheros de configuración
+     *
+     * @return \Symfony\Component\DependencyInjection\Loader\XmlFileLoader
+     */
+    private function getLoader(): XmlFileLoader
+    {
+        $rootDir = realpath(__DIR__.'/../../../../');
+        $loader = new XmlFileLoader($this, new FileLocator($rootDir.'/config'));
+
+        return $loader;
     }
 }

@@ -1,0 +1,55 @@
+---
+
+#    services:
+#        composer:
+#            class: \PlanB\Alfred\Services\Composer   #   => extends \PlanB\Alfred\Core\Command
+#
+#        readme:
+#            class: \PlanB\Alfred\Services\File     # => extends \PlanB\Alfred\Core\File
+#            template: readme.twig
+#            target: README.md
+
+profiles:
+    init:
+        description: inicializa el proyecto
+        jobs:
+            - init
+
+#    jobs:
+#        init:
+#            stop_on_fail: true
+#            async: true
+#            tasks:
+#                -
+#                    name: composer
+#                    action: init
+#
+#                -
+#                    name: readme
+#                    action: create | delete
+#
+#                -
+#                    name: license
+#                    action: init
+#
+#                -
+#                    name: git
+#                    action: init
+#                    hooks:
+#                        - precommit
+#                        - commitmsg
+#                -
+#                    name: phpspec
+#                    action: install
+#                -
+#                    name: sami
+#                    action: install
+
+
+    #alfred-please run profile init
+    #
+    #alfred-please run job init
+    #
+    #alfred-please run task init:git
+
+

@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# ContainerBuilder
+# ParameterResolver
 
 
-> Contenedor de dependencias
+> Convierte una entrada por consola en un array con parámetros validados
 >
 > 
 
@@ -17,30 +17,30 @@
 
 ## Methods
 
-### create
-Crea una nueva instancia, debidamente configurada
+### fromArray
 
 
-static **ContainerBuilder::create**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+
+static **ParameterResolver::fromArray**([iterable](../../../../iterable.md) $values) : 
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
+|[iterable](../../../../iterable.md) |$values |  |
 
 ---
 
 
-### boot
-Define parámetros y servicios
+### configure
 
 
-protected **ContainerBuilder::boot**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+
+**ParameterResolver::configure**([OptionsResolver](../../../../OptionsResolver.md) $resolver) : 
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
+|[OptionsResolver](../../../../OptionsResolver.md) |$resolver |  |
 
 ---
 

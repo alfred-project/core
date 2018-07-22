@@ -16,9 +16,12 @@
         "apcu-autoloader": true
     },
     "require": {
+        "planb/utils": "dev-develop",
         "symfony/config": "^4.1",
         "symfony/console": "^4.1",
         "symfony/dependency-injection": "^4.1",
+        "symfony/options-resolver": "^4.1",
+        "symfony/yaml": "^4.1",
         "twig/twig": "^2.4"
     },
     "autoload": {
@@ -28,5 +31,18 @@
     },
     "bin": [
         "bin/alfred"
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "^4.3",
+        "ciaranmcnulty/phpspec-typehintedmethods": "^3.0",
+        "leanphp/phpspec-code-coverage": "^4.2",
+        "memio/spec-gen": "^0.8.4",
+        "symfony/var-dumper": "^4.1"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/mnt/workspace/planb/utils"
+        }
     ]
 }

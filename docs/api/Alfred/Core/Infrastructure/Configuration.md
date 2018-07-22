@@ -1,48 +1,19 @@
 
                                                                                                                                             
     
-# ContainerBuilder
-
-
-> Contenedor de dependencias
->
-> 
+# Alfred\Core\Infrastructure\Configuration
 
 
 
+## Classes
+| | |
+| --- | --- |
+| [Alfred\Core\Infrastructure\Configuration\ConfigReader](../../../Alfred/Core/Infrastructure/Configuration/ConfigReader.md) | Factory para leer y parsear objetos Config |
+| [Alfred\Core\Infrastructure\Configuration\Definition](../../../Alfred/Core/Infrastructure/Configuration/Definition.md) |  |
 
 
 
 
-
-## Methods
-
-### create
-Crea una nueva instancia, debidamente configurada
-
-
-static **ContainerBuilder::create**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
-
----
-
-
-### boot
-Define parámetros y servicios
-
-
-protected **ContainerBuilder::boot**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
-
----
 
 
                                                                                                                                                                                                                                                                                                                                                                                                             

@@ -21,9 +21,12 @@
 RunCommand constructor.
 
 
-**RunCommand::__construct**() : 
+**RunCommand::__construct**([Config](../../../../../Config.md) $config) : 
 
 
+|Parameters: | | |
+| --- | --- | --- |
+|[Config](../../../../../Config.md) |$config | la configuracion personalizada |
 
 ---
 

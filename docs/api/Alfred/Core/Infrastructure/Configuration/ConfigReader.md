@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# ContainerBuilder
+# ConfigReader
 
 
-> Contenedor de dependencias
+> Factory para leer y parsear objetos Config
 >
 > 
 
@@ -17,30 +17,13 @@
 
 ## Methods
 
-### create
-Crea una nueva instancia, debidamente configurada
+### build
+Construye un objet Config
 
 
-static **ContainerBuilder::create**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
+**ConfigReader::build**() : [Config](../../../../Config.md)
 
 
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
-
----
-
-
-### boot
-Define parámetros y servicios
-
-
-protected **ContainerBuilder::boot**([Parameters](../../../../Parameters.md) $parameters) : [ContainerBuilder](../../../../ContainerBuilder.md)
-
-
-|Parameters: | | |
-| --- | --- | --- |
-|[Parameters](../../../../Parameters.md) |$parameters |  |
 
 ---
 
