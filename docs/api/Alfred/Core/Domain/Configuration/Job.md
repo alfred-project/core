@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# Config
+# Job
 
 
-> Representa a la configuración personalizada de un proyecto
+> La configuración de un trabajo (conjunto de tareas)
 >
 > 
 
@@ -18,10 +18,10 @@
 ## Methods
 
 ### fromArray
-Crea una nueva instancia
+Crea una nueva instancia desde un array con los datos
 
 
-static **Config::fromArray**(array $values) : [Config](../../../../Config.md)
+static **Job::fromArray**(array $values) : [Job](../../../../Job.md)
 
 
 |Parameters: | | |
@@ -31,77 +31,77 @@ static **Config::fromArray**(array $values) : [Config](../../../../Config.md)
 ---
 
 
-### getServices
-Devuelve la lista de Servicios
+### isStopOnFail
+Indica si el trabajo debe detenerse al primer fallo
 
 
-**Config::getServices**() : [ServiceList](../../../../ServiceList.md)
+**Job::isStopOnFail**() : bool
 
 
 
 ---
 
 
-### setServices
-Asigna la lista de Servicios
+### setStopOnFail
+Establece si el trabajo debe deternser al primer fallo
 
 
-**Config::setServices**([iterable](../../../../iterable.md) $services) : [Config](../../../../Config.md)
+**Job::setStopOnFail**(bool $stopOnFail) : [Job](../../../../Job.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[iterable](../../../../iterable.md) |$services |  |
+|bool |$stopOnFail |  |
 
 ---
 
 
-### getProfiles
-Devuelve la lista de perfiles
+### isAsync
+Indica si el trabajo se debe ser asincrono
 
 
-**Config::getProfiles**() : [ProfileList](../../../../ProfileList.md)
+**Job::isAsync**() : bool
 
 
 
 ---
 
 
-### setProfiles
-Asigna la lista de Perfiles
+### setAsync
+Establece si el trabajo debe ser asincrono
 
 
-**Config::setProfiles**([iterable](../../../../iterable.md) $profiles) : [Config](../../../../Config.md)
+**Job::setAsync**(bool $async) : [Job](../../../../Job.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[iterable](../../../../iterable.md) |$profiles |  |
+|bool |$async |  |
 
 ---
 
 
-### getJobs
-Devuelve la lista de Trabajos
+### getTasks
+Devuelve la lista de Tareas
 
 
-**Config::getJobs**() : [JobList](../../../../JobList.md)
+**Job::getTasks**() : [TaskList](../../../../TaskList.md)
 
 
 
 ---
 
 
-### setJobs
-Asgina la lista de Trabajos
+### setTasks
+Asigna la lista de tareas
 
 
-**Config::setJobs**([iterable](../../../../iterable.md) $jobs) : [Config](../../../../Config.md)
+**Job::setTasks**([iterable](../../../../iterable.md) $tasks) : [Job](../../../../Job.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[iterable](../../../../iterable.md) |$jobs |  |
+|[iterable](../../../../iterable.md) |$tasks |  |
 
 ---
 

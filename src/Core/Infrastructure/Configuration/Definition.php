@@ -34,9 +34,32 @@ class Definition implements ConfigurationInterface
         $rootNode = $treeBuilder->root('alfred');
 
         $root = $rootNode->children();
+        $this->defineServices($root);
         $this->defineProfiles($root);
+        $this->defineJobs($root);
 
         return $treeBuilder;
+    }
+
+    /**
+     * Define el nodo services en el array de configuración
+     *
+     * @param \Symfony\Component\Config\Definition\Builder\NodeBuilder $root
+     */
+    protected function defineServices(NodeBuilder $root): void
+    {
+        $root->arrayNode('services')
+            ->arrayPrototype()
+                ->children()
+                    ->scalarNode('class')
+                        ->isRequired()
+                    ->end()
+                    ->arrayNode('params')
+                        ->scalarPrototype()->end()
+                    ->end()
+                    ->end()
+                ->end()
+            ->end();
     }
 
     /**
@@ -49,10 +72,48 @@ class Definition implements ConfigurationInterface
         $root->arrayNode('profiles')
             ->arrayPrototype()
                 ->children()
-                    ->scalarNode('description')->end()
-                        ->arrayNode('jobs')
-                            ->scalarPrototype()->end()
+                    ->scalarNode('description')
+                        ->isRequired()
+                        ->cannotBeEmpty()
+                    ->end()
+                    ->arrayNode('jobs')
+                        ->scalarPrototype()->end()
+                    ->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    /**
+     * Define el nodo jobs en el array de configuración
+     *
+     * @param \Symfony\Component\Config\Definition\Builder\NodeBuilder $root
+     */
+    protected function defineJobs(NodeBuilder $root): void
+    {
+        $root->arrayNode('jobs')
+            ->arrayPrototype()
+                ->children()
+                    ->booleanNode('stop_on_fail')
+                        ->defaultFalse()
+                    ->end()
+                    ->booleanNode('async')
+                        ->defaultFalse()
+                    ->end()
+                    ->arrayNode('tasks')
+                        ->arrayPrototype()
+                            ->children()
+                                ->scalarNode('service')
+                                    ->isRequired()
+                                    ->cannotBeEmpty()
+                                ->end()
+                                ->scalarNode('action')->end()
+                                ->arrayNode('params')
+                                    ->scalarPrototype()->end()
+                                ->end()
+                            ->end()
                         ->end()
+                    ->end()
                     ->end()
                 ->end()
             ->end();

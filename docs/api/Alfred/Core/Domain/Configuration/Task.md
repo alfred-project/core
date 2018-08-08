@@ -1,10 +1,10 @@
 
                                                                                                                                             
     
-# Config
+# Task
 
 
-> Representa a la configuración personalizada de un proyecto
+> Configuración de una tarea de un trabajo
 >
 > 
 
@@ -18,10 +18,10 @@
 ## Methods
 
 ### fromArray
-Crea una nueva instancia
+Crea una nueva instancia desde un array con valores
 
 
-static **Config::fromArray**(array $values) : [Config](../../../../Config.md)
+static **Task::fromArray**(array $values) : [Task](../../../../Task.md)
 
 
 |Parameters: | | |
@@ -31,77 +31,78 @@ static **Config::fromArray**(array $values) : [Config](../../../../Config.md)
 ---
 
 
-### getServices
-Devuelve la lista de Servicios
+### getService
+Devuelve el nombre del servicio
 
 
-**Config::getServices**() : [ServiceList](../../../../ServiceList.md)
+**Task::getService**() : string
 
 
 
 ---
 
 
-### setServices
-Asigna la lista de Servicios
+### setService
+Asigna el nombre del servicio
 
 
-**Config::setServices**([iterable](../../../../iterable.md) $services) : [Config](../../../../Config.md)
+**Task::setService**(string $service) : [Task](../../../../Task.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[iterable](../../../../iterable.md) |$services |  |
+|string |$service |  |
 
 ---
 
 
-### getProfiles
-Devuelve la lista de perfiles
+### getAction
+Devuelve la acción
+(o nulo, si queremos la acción por defecto)
 
 
-**Config::getProfiles**() : [ProfileList](../../../../ProfileList.md)
+**Task::getAction**() : null|string
 
 
 
 ---
 
 
-### setProfiles
-Asigna la lista de Perfiles
+### setAction
+Asigna la acción
 
 
-**Config::setProfiles**([iterable](../../../../iterable.md) $profiles) : [Config](../../../../Config.md)
+**Task::setAction**(string $action) : [Task](../../../../Task.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[iterable](../../../../iterable.md) |$profiles |  |
+|string |$action |  |
 
 ---
 
 
-### getJobs
-Devuelve la lista de Trabajos
+### getParams
+Devuelve la lista de parámetros
 
 
-**Config::getJobs**() : [JobList](../../../../JobList.md)
+**Task::getParams**() : [ItemList](../../../../ItemList.md)
 
 
 
 ---
 
 
-### setJobs
-Asgina la lista de Trabajos
+### setParams
+Asigna la lista de parámetros
 
 
-**Config::setJobs**([iterable](../../../../iterable.md) $jobs) : [Config](../../../../Config.md)
+**Task::setParams**([iterable](../../../../iterable.md) $params) : [Task](../../../../Task.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|[iterable](../../../../iterable.md) |$jobs |  |
+|[iterable](../../../../iterable.md) |$params |  |
 
 ---
 

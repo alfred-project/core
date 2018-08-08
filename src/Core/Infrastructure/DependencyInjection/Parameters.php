@@ -13,7 +13,8 @@ declare(strict_types=1);
 
 namespace Alfred\Core\Infrastructure\DependencyInjection;
 
-use PlanB\ValueObject\Path\Path;
+use Alfred\Core\Infrastructure\Configuration\ConfigFactory;
+use PlanB\Type\Path\Path;
 
 /**
  * Representa al conjunto de parámetros que configuran la aplicación
@@ -44,6 +45,8 @@ class Parameters implements \IteratorAggregate
      */
     public static function fromArray(iterable $values = []): self
     {
+        $values = array_filter($values);
+
         return array_to_object($values, static::class);
     }
 
@@ -120,7 +123,7 @@ class Parameters implements \IteratorAggregate
     {
 
         $path = ensure_path($configFile)
-            ->isReadableFileWithExtension('yml')
+            ->isReadableFileWithExtension(...ConfigFactory::ALLOWED_EXTENSIONS)
             ->stringify();
 
         $this->configFile = $path;

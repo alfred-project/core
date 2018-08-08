@@ -1,10 +1,16 @@
 ---
 services:
     readme:
-        class: \Alfred\Core\Domain\Service\File
+        class: \Alfred\Core\Domain\Service\File     # => extends \PlanB\Alfred\Core\File
         params:
             template: readme.twig
             target: README.md
+
+    license:
+        class: \Alfred\Core\Domain\Service\File     # => extends \PlanB\Alfred\Core\File
+        params:
+            template: license.twig
+            target: LICENSE.md
 
 profiles:
     init:

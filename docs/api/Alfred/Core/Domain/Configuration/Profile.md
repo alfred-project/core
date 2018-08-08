@@ -1,49 +1,82 @@
 
                                                                                                                                             
     
-# ConfigFactory
+# Profile
 
 
-> Factory para leer y parsear objetos Config
+> La configuración de un perfil
 >
 > 
 
 
 
 
-## Constants
-- ALLOWED_EXTENSIONS
 
 
 
 
 ## Methods
 
-### create
-Crea un objeto configuración, a partir de la ruta del fichero config
+### fromArray
+Crea una nueva instnacia desde un array
 
 
-**ConfigFactory::create**(string $configPath) : [Config](../../../../Config.md)
+static **Profile::fromArray**(array $values) : [Service](../../../../Service.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|string |$configPath |  |
+|array |$values |  |
 
 ---
 
 
-### processConfig
-Comprueba que el array defnido en el fichero de configuración cumple con la definición
+### getDescription
+Devuelve la descripción del profile
 
 
-**ConfigFactory::processConfig**(array $custom, array $default = []) : mixed[]
+**Profile::getDescription**() : string
+
+
+
+---
+
+
+### setDescription
+Asigna la descripción del profile
+
+
+**Profile::setDescription**(string $description) : [Profile](../../../../Profile.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|array |$custom |  |
-|array |$default |  |
+|string |$description |  |
+
+---
+
+
+### getJobs
+Devuelve la lista de trabajos que componen este profile
+
+
+**Profile::getJobs**() : mixed[]
+
+
+
+---
+
+
+### setJobs
+Asigna la lista de trabajos que componen este profile
+
+
+**Profile::setJobs**(array $jobs) : [Profile](../../../../Profile.md)
+
+
+|Parameters: | | |
+| --- | --- | --- |
+|array |$jobs |  |
 
 ---
 

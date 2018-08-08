@@ -1,9 +1,21 @@
 
                                                                                                                                             
     
-# Interfaces
+# File
 
-* [Alfred\Core\Domain\Service\ServiceInterface](Alfred/Core/Domain/Service/ServiceInterface.md)
+
+> Servicio para gestionar ficheros
+>
+> 
+
+
+
+
+
+
+
+
+## Methods
 
                                                                                                                                                                                                                                                                                                                                                                                                             
     

@@ -4,8 +4,9 @@ namespace spec\Alfred\Core\Infrastructure\DependencyInjection;
 
 use Alfred\Core\Infrastructure\DependencyInjection\Parameters;
 use PhpSpec\ObjectBehavior;
-use PlanB\ValueObject\Path\Exception\InvalidPathException;
-use PlanB\ValueObject\Path\Path;
+use PlanB\Type\Assurance\Exception\AssertException;
+use PlanB\Type\Path\Exception\InvalidPathException;
+use PlanB\Type\Path\Path;
 use Prophecy\Argument;
 
 class ParametersSpec extends ObjectBehavior
@@ -43,7 +44,7 @@ class ParametersSpec extends ObjectBehavior
             'project-dir' => '/fake/directory'
         ]]);
 
-        $this->shouldThrow(InvalidPathException::class)->duringInstantiation();
+        $this->shouldThrow(AssertException::class)->duringInstantiation();
     }
 
     public function it_has_a_config_file_by_default()
@@ -103,7 +104,7 @@ class ParametersSpec extends ObjectBehavior
             'config-file' => '/fake/config/file'
         ]]);
 
-        $this->shouldThrow(InvalidPathException::class)->duringInstantiation();
+        $this->shouldThrow(AssertException::class)->duringInstantiation();
     }
 
     public function it_throw_an_exception_when_config_file_havent_yml_extension()
@@ -112,7 +113,7 @@ class ParametersSpec extends ObjectBehavior
             'config-file' => __FILE__
         ]]);
 
-        $this->shouldThrow(InvalidPathException::class)->duringInstantiation();
+        $this->shouldThrow(AssertException::class)->duringInstantiation();
     }
 
     public function it_can_be_converted_to_iterator()

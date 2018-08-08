@@ -14,12 +14,14 @@ declare(strict_types=1);
 namespace Alfred\Core\UI\Console;
 
 use Alfred\Core\Infrastructure\DependencyInjection\ContainerBuilder;
-use Alfred\Core\Infrastructure\DependencyInjection\ParameterResolver;
+use Alfred\Core\Infrastructure\DependencyInjection\Parameters;
+use PlanB\Cli\MessageExceptionBuilder;
 use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\Input;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -70,13 +72,37 @@ class Application extends ConsoleApplication
     public function run(?InputInterface $input = null, ?OutputInterface $output = null)
     {
 
-        $container = $this->buildContainer($input);
+        if (null === $input) {
+            $input = new ArgvInput();
+        }
 
-        $this->container = $container;
+        if (null === $output) {
+            $output = new ConsoleOutput();
+        }
 
-        $this->initCommands();
+        $this->tryRun($input, $output);
+    }
 
-        parent::run($input, $output);
+    /**
+     * Ejecuta la aplicación
+     *
+     * @param null|\Symfony\Component\Console\Input\InputInterface   $input
+     * @param null|\Symfony\Component\Console\Output\OutputInterface $output
+     *
+     * @return int|void
+     *
+     * @throws \Exception
+     */
+    private function tryRun(?InputInterface $input = null, ?OutputInterface $output = null): void
+    {
+
+        try {
+            $this->container = $this->buildContainer($input);
+            $this->initCommands();
+            parent::run($input, $output);
+        } catch (\Throwable $exception) {
+            $this->showError($exception, $input, $output);
+        }
     }
 
     /**
@@ -89,7 +115,7 @@ class Application extends ConsoleApplication
     protected function buildContainer(?InputInterface $input): ContainerBuilder
     {
         $input = $this->bindInput($input);
-        $parameters = ParameterResolver::build($input->getOptions());
+        $parameters = Parameters::fromArray($input->getOptions());
 
         $container = ContainerBuilder::create($parameters);
 
@@ -137,5 +163,24 @@ class Application extends ConsoleApplication
         ];
 
         $this->addCommands($commands);
+    }
+
+    /**
+     * Muestra el mensaje de error por pantalla
+     *
+     * @param $exception
+     * @param \Symfony\Component\Console\Input\InputInterface   $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     */
+    private function showError($exception, InputInterface $input, OutputInterface $output): void
+    {
+        $builder = MessageExceptionBuilder::fromException($exception);
+
+        if ($input->getOption('verbose')) {
+            $builder->withTrace();
+        }
+
+        $message = $builder->build();
+        $output->writeln($message->stringify());
     }
 }

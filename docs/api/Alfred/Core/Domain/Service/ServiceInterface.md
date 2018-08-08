@@ -1,9 +1,21 @@
 
                                                                                                                                             
     
-# Interfaces
+# ServiceInterface
 
-* [Alfred\Core\Domain\Service\ServiceInterface](Alfred/Core/Domain/Service/ServiceInterface.md)
+
+> Servicio, o conjunto de acciones que se ejecutan sobre un objeto del proyecto
+>
+> 
+
+
+
+
+
+
+
+
+## Methods
 
                                                                                                                                                                                                                                                                                                                                                                                                             
     

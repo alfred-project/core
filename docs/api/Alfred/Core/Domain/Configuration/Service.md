@@ -1,49 +1,82 @@
 
                                                                                                                                             
     
-# ConfigFactory
+# Service
 
 
-> Factory para leer y parsear objetos Config
+> La configuración de un servicio
 >
 > 
 
 
 
 
-## Constants
-- ALLOWED_EXTENSIONS
 
 
 
 
 ## Methods
 
-### create
-Crea un objeto configuración, a partir de la ruta del fichero config
+### fromArray
+Crea una nueva instnacia desde un array
 
 
-**ConfigFactory::create**(string $configPath) : [Config](../../../../Config.md)
+static **Service::fromArray**(array $values) : [Service](../../../../Service.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|string |$configPath |  |
+|array |$values |  |
 
 ---
 
 
-### processConfig
-Comprueba que el array defnido en el fichero de configuración cumple con la definición
+### getClass
+Devuelve el nombre de la clase
 
 
-**ConfigFactory::processConfig**(array $custom, array $default = []) : mixed[]
+**Service::getClass**() : string
+
+
+
+---
+
+
+### setClass
+Asigna el nombre de la clase
+
+
+**Service::setClass**(string $class) : [Service](../../../../Service.md)
 
 
 |Parameters: | | |
 | --- | --- | --- |
-|array |$custom |  |
-|array |$default |  |
+|string |$class |  |
+
+---
+
+
+### getParams
+Devuelve la lista de parámetros
+
+
+**Service::getParams**() : [ItemList](../../../../ItemList.md)
+
+
+
+---
+
+
+### setParams
+Asigna la lista de parámetros
+
+
+**Service::setParams**(array $params) : [Service](../../../../Service.md)
+
+
+|Parameters: | | |
+| --- | --- | --- |
+|array |$params |  |
 
 ---
 
